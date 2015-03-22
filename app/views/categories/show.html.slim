@@ -1,0 +1,16 @@
+#teaser
+  .container
+    .span-29.last
+      .teaser-bar
+        ul
+          li
+            a.score.icon-score.tipsy-s href="#" title=("Average score of all projects")  1.21
+          li
+            a.tipsy-s.icon.icon-folder-close href="/#Testing" title=("See similar categories in group Testing")  Testing
+      h2 Acceptance Test Frameworks
+#main
+  .container
+    #content.span-20
+      .category
+        - @category.projects.each do |project|
+          = render project

@@ -1,0 +1,65 @@
+h1 Listing projects
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th Popularity
+      th Website
+      th Rdoc
+      th Wiki
+      th Source code
+      th Bug tracker
+      th Mailing list
+      th Downloads
+      th Releases
+      th Latest version
+      th Released at
+      th First released at
+      th Depending gems
+      th Github
+      th Watchers
+      th Forks
+      th Activity
+      th Last commit at
+      th First commit at
+      th Contributors
+      th Issues
+      th
+      th
+      th
+
+  tbody
+    - @projects.each do |project|
+      tr
+        td = project.name
+        td = project.description
+        td = project.popularity
+        td = project.website
+        td = project.rdoc
+        td = project.wiki
+        td = project.source_code
+        td = project.bug_tracker
+        td = project.mailing_list
+        td = project.downloads
+        td = project.releases
+        td = project.latest_version
+        td = project.released_at
+        td = project.first_released_at
+        td = project.depending_gems
+        td = project.github
+        td = project.watchers
+        td = project.forks
+        td = project.activity
+        td = project.last_commit_at
+        td = project.first_commit_at
+        td = project.contributors
+        td = project.issues
+        td = link_to 'Show', project
+        td = link_to 'Edit', edit_project_path(project)
+        td = link_to 'Destroy', project, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Project', new_project_path

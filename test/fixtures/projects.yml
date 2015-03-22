@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  popularity: 1.5
+  website: MyString
+  rdoc: MyString
+  wiki: MyString
+  source_code: MyString
+  bug_tracker: MyString
+  mailing_list: MyString
+  downloads: 1
+  releases: 1
+  latest_version: MyString
+  released_at: 2015-03-21 20:13:54
+  first_released_at: 2015-03-21 20:13:54
+  depending_gems: 1
+  github: MyString
+  watchers: 1
+  forks: 1
+  activity: 1.5
+  last_commit_at: 2015-03-21 20:13:54
+  first_commit_at: 2015-03-21 20:13:54
+  contributors: MyString
+  issues: 1
+
+two:
+  name: MyString
+  description: MyText
+  popularity: 1.5
+  website: MyString
+  rdoc: MyString
+  wiki: MyString
+  source_code: MyString
+  bug_tracker: MyString
+  mailing_list: MyString
+  downloads: 1
+  releases: 1
+  latest_version: MyString
+  released_at: 2015-03-21 20:13:54
+  first_released_at: 2015-03-21 20:13:54
+  depending_gems: 1
+  github: MyString
+  watchers: 1
+  forks: 1
+  activity: 1.5
+  last_commit_at: 2015-03-21 20:13:54
+  first_commit_at: 2015-03-21 20:13:54
+  contributors: MyString
+  issues: 1

@@ -1,0 +1,341 @@
+doctype html
+html lang="en-us" 
+  head
+    title The Ruby Toolbelt - Know Your Options!
+    meta content="The Ruby Toolbelt is a comprehensive catalog of Ruby and Rails plug-ins, gems, tools and resources for Ruby developers with popularity ratings based on Github watchers and Gem downloads" name="Description"
+    meta content="ruby, toolbox, toolbelt, gems, plugins, rails, github, catalog, overview, categories, rubygem, gem, rubygems, activesupport, activerecord, actionmailer, rails, rack, rake, mail, bundler, mysql, i18n" name="Keywords"
+    meta content=("text/html; charset=utf-8") name="content-type"
+    //link href="/opensearch.xml" rel="search" title="The Ruby Toolbelt") type="application/opensearchdescription+xml"
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  body
+    = render 'layouts/header'
+    = render 'layouts/breadcrumbs'
+    #main
+      .container
+        #content.span-20
+          = yield
+        #sidebar.span-9.last
+          .sidebar.user
+            div
+            .small Signed in as
+            h3 MichaelSp
+            ul
+              li
+                a href="/account"  Show your account
+              li
+                a href="/sign_out"  Sign out
+          .clear
+          .note Sponsored by you!
+          .sidebar.recent
+            .info
+              | Running the Ruby Toolbox takes a lot of work and dedication from
+              a href="https://twitter.com/thedeadserious"  my
+              | spare time.
+              | Please consider a donation!
+              .text-center
+                form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" 
+                  input name="cmd" type="hidden" value="_s-xclick" /
+                  input name="hosted_button_id" type="hidden" value="C22UFB3UGWJPC" /
+                  button.button.clean-green onclick="_gaq.push(['_trackEvent', 'Donate', 'Click']);" type="submit" 
+                    i.icon.icon-heart
+                    | Donate
+          .sidebar.recent
+            h3
+              i.icon.icon-comments
+              | Recent Comments
+            ul
+              li
+                .avatar
+                a href="/users/nasmorn"  Roman Almeida
+                | commented on
+                a href="/projects/comfortable_mexican_sofa"  Comfortable Mexican Sofa
+                br/
+                abbr.timeago.tipsy-n title="2015-02-12T21:13:01Z"  2015-02-12 21:13:01 UTC
+              li
+                .avatar
+                a href="/users/rossettistone"  Mark Rossetti
+                | commented on
+                a href="/projects/refinerycms"  Refinery CMS
+                br/
+                abbr.timeago.tipsy-n title="2015-02-05T06:04:49Z"  2015-02-05 06:04:49 UTC
+              li
+                .avatar
+                a href="/users/hcatlin"  Hampton Catlin
+                | commented on
+                a href="/projects/state_machine"  State machine
+                br/
+                abbr.timeago.tipsy-n title="2015-01-20T21:08:43Z"  2015-01-20 21:08:43 UTC
+              li
+                .avatar
+                a href="/users/wpiekutowski"  Wojciech Piekutowski
+                | commented on
+                a href="/projects/polish-number"  polish-number
+                br/
+                abbr.timeago.tipsy-n title="2015-01-20T15:56:39Z"  2015-01-20 15:56:39 UTC
+              li
+                .avatar
+                a href="/users/daqo"  David Qorashi
+                | commented on
+                a href="/projects/active_type"  active_type
+                br/
+                abbr.timeago.tipsy-n title="2015-01-12T22:19:32Z"  2015-01-12 22:19:32 UTC
+              li
+                .avatar
+                a href="/users/volmer"  Volmer Soares
+                | commented on
+                a href="/projects/bootsy-simple_form"  bootsy-simple_form
+                br/
+                abbr.timeago.tipsy-n title="2014-12-21T17:44:10Z"  2014-12-21 17:44:10 UTC
+              li
+                .avatar
+                a href="/users/volmer"  Volmer Soares
+                | commented on
+                a href="/projects/raddar-tags"  raddar-tags
+                br/
+                abbr.timeago.tipsy-n title="2014-12-21T17:43:57Z"  2014-12-21 17:43:57 UTC
+              li
+                .avatar
+                a href="/users/volmer"  Volmer Soares
+                | commented on
+                a href="/projects/raddar-watchers"  raddar-watchers
+                br/
+                abbr.timeago.tipsy-n title="2014-12-21T17:43:49Z"  2014-12-21 17:43:49 UTC
+              li
+                .avatar
+                a href="/users/volmer"  Volmer Soares
+                | commented on
+                a href="/projects/raddar-ratings"  raddar-ratings
+                br/
+                abbr.timeago.tipsy-n title="2014-12-21T17:43:43Z"  2014-12-21 17:43:43 UTC
+              li
+                .avatar
+                a href="/users/volmer"  Volmer Soares
+                | commented on
+                a href="/projects/bootsy-mongoid"  bootsy-mongoid
+                br/
+                abbr.timeago.tipsy-n title="2014-12-21T17:42:54Z"  2014-12-21 17:42:54 UTC
+          .sidebar.recent
+            h3
+              i.icon.icon-star
+              | Most popular projects
+            ul
+              li
+                .notice 92.01
+                strong 1.
+                a.tipsy-s href="/projects/activesupport" title="A toolkit of support libraries and Ruby core extensions extracted from the Rails framework. Rich support for multibyte strings, internationalization, time zones, and testing."  Active Support
+              li
+                .notice 84.01
+                strong 2.
+                a.tipsy-s href="/projects/rails" title="Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity. It encourages beautiful code by favoring convention over configuration."  Ruby on Rails
+              li
+                .notice 82.69
+                strong 3.
+                a.tipsy-s href="/projects/activerecord" title="Databases on Rails. Build a persistent domain model by mapping database tables to Ruby classes. Strong conventions for associations), validations, aggregations, migrations, and testing come baked-in."  Active Record
+              li
+                .notice 80.50
+                strong 4.
+                a.tipsy-s href="/projects/actionmailer" title="Email on Rails. Compose, deliver, receive, and test emails using the familiar controller/view pattern. First-class support for multipart email and attachments."  Action Mailer
+              li
+                .notice 61.47
+                strong 5.
+                a.tipsy-s href="/projects/actionpack" title="Web apps on Rails. Simple, battle-tested conventions for building and testing MVC web applications. Works with any Rack-compatible server."  actionpack
+              li
+                .notice 59.84
+                strong 6.
+                a.tipsy-s href="/projects/activemodel" title="A toolkit for building modeling frameworks like Active Record. Rich support for attributes), callbacks, validations, serialization, internationalization, and testing."  activemodel
+              li
+                .notice 55.87
+                strong 7.
+                a.tipsy-s href="/projects/erubis" title="Erubis is an implementation of eRuby and has the following features: * Very fast), almost three times faster than ERB and about 10% faster than eruby. * Multi-language support (Ruby/PHP/C/Java/Scheme/Perl/Javascript) * Auto escaping support * Auto trimming spaces around '&lt;% %&gt;' * Embedded pattern changeable (default '&lt;% %&gt;') * Enable to handle Processing Instructions (PI) as embedded pattern (ex. '&lt;?rb ... ?&gt;') * Context object available and easy to combine eRuby template with YAML datafile * Print statement available * Easy to extend and customize in subclass * Ruby on Rails support"  erubis
+              li
+                .notice 51.18
+                strong 8.
+                a.tipsy-s href="/projects/railties" title="Rails internals: application bootup, plugins, generators, and rake tasks."  railties
+              li
+                .notice 50.81
+                strong 9.
+                a.tipsy-s href="/projects/rake" title="Rake is a Make-like program implemented in Ruby. Tasks and dependencies are specified in standard Ruby syntax. Rake has the following features: * Rakefiles (rake's version of Makefiles) are completely defined in standard Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about (is that a tab or a space?) * Users can specify tasks with prerequisites. * Rake supports rule patterns to synthesize implicit tasks. * Flexible FileLists that act like arrays but know about manipulating file names and paths. * A library of prepackaged tasks to make building rakefiles easier. For example), tasks for building tarballs and publishing to FTP or SSH sites. (Formerly tasks for building RDoc and Gems were included in rake but they're now available in RDoc and RubyGems respectively.) * Supports parallel execution of tasks."  Rake
+              li
+                .notice 49.66
+                strong 10.
+                a.tipsy-s href="/projects/rack" title="Rack provides a minimal), modular and adaptable interface for developing web applications in Ruby. By wrapping HTTP requests and responses in the simplest way possible, it unifies and distills the API for web servers, web frameworks, and software in between (the so-called middleware) into a single method call. Also see http://rack.github.io/."  Rack
+              li
+                .notice 46.76
+                strong 11.
+                a.tipsy-s href="/projects/gitlabhq" title="GitLab is version control for your server"  gitlabhq
+              li
+                .notice 45.68
+                strong 12.
+                a.tipsy-s href="/projects/activeresource" title="REST on Rails. Wrap your RESTful web app with Ruby classes and work with them like Active Record models."  activeresource
+              li
+                .notice 42.54
+                strong 13.
+                a.tipsy-s href="/projects/thor" title="Thor is a toolkit for building powerful command-line interfaces."  Thor
+              li
+                .notice 42.19
+                strong 14.
+                a.tipsy-s href="/projects/multi_json" title="A common interface to multiple JSON libraries), including Oj, Yajl, the JSON gem (with C-extensions), the pure-Ruby JSON gem, NSJSONSerialization, gson.rb, JrJackson, and OkJson."  multi_json
+              li
+                .notice 40.56
+                strong 15.
+                a.tipsy-s href="/projects/json" title="This is a JSON implementation as a Ruby extension in C."  json
+          .sidebar.recent
+            h3
+              i.icon.icon-bullhorn
+              | Recently added projects
+            ul
+              li
+                a href="/projects/refile"  refile
+                br/
+                | in
+                a href="/categories/rails_file_uploads"  Rails File Uploads
+                abbr.timeago.tipsy-n title="2015-01-11T22:46:51Z"  2015-01-11 22:46:51 UTC
+              li
+                a href="/projects/rubycritic"  rubycritic
+                br/
+                | in
+                a href="/categories/code_metrics"  Code Metrics
+                abbr.timeago.tipsy-n title="2014-04-30T12:42:30Z"  2014-04-30 12:42:30 UTC
+              li
+                a href="/projects/cancancan"  cancancan
+                br/
+                | in
+                a href="/categories/rails_authorization"  Rails Authorization
+                abbr.timeago.tipsy-n title="2014-04-30T12:12:19Z"  2014-04-30 12:12:19 UTC
+              li
+                a href="/projects/dom_routes"  dom_routes
+                br/
+                | in
+                a href="/categories/javascript_tools"  JavaScript Tools
+                abbr.timeago.tipsy-n title="2013-12-17T16:01:34Z"  2013-12-17 16:01:34 UTC
+              li
+                a href="/projects/kbam"  kbam
+                br/
+                | in
+                a href="/categories/SQL_Database_Adapters"  SQL Database Adapters
+                abbr.timeago.tipsy-n title="2013-12-16T20:16:14Z"  2013-12-16 20:16:14 UTC
+              li
+                a href="/projects/analytics-rb"  analytics-rb
+                br/
+                | in
+                a href="/categories/api_clients"  API Clients
+                abbr.timeago.tipsy-n title="2013-12-15T11:14:44Z"  2013-12-15 11:14:44 UTC
+              li
+                a href="/projects/indexable"  indexable
+                br/
+                | in
+                a href="/categories/javascript_tools"  JavaScript Tools
+                abbr.timeago.tipsy-n title="2013-12-12T14:08:08Z"  2013-12-12 14:08:08 UTC
+              li
+                a href="/projects/MIAConverter"  MIAConverter
+                br/
+                | in
+                a href="/categories/image_processing"  Image Processing
+                abbr.timeago.tipsy-n title="2013-12-10T12:12:30Z"  2013-12-10 12:12:30 UTC
+              li
+                a href="/projects/disqus_api"  disqus_api
+                br/
+                | in
+                a href="/categories/api_clients"  API Clients
+                abbr.timeago.tipsy-n title="2013-12-10T12:12:04Z"  2013-12-10 12:12:04 UTC
+              li
+                a href="/projects/informante"  informante
+                br/
+                | in
+                a href="/categories/Configuration_Management"  Configuration Management
+                abbr.timeago.tipsy-n title="2013-12-08T12:46:41Z"  2013-12-08 12:46:41 UTC
+          .sidebar.recent
+            h3
+              i.icon.icon-bullhorn
+              | Recently added Categories
+            ul
+              li
+                a href="/categories/Breadcrumb_Builders"  Breadcrumb Builders
+                abbr.timeago.tipsy-n title="2013-04-05T18:04:24Z"  2013-04-05 18:04:24 UTC
+              li
+                a href="/categories/PDF_Processing"  PDF Processing
+                abbr.timeago.tipsy-n title="2013-01-17T11:14:52Z"  2013-01-17 11:14:52 UTC
+              li
+                a href="/categories/Data_Migration"  Data Migration
+                abbr.timeago.tipsy-n title="2013-01-17T10:41:46Z"  2013-01-17 10:41:46 UTC
+              li
+                a href="/categories/Multitenancy"  Multitenancy
+                abbr.timeago.tipsy-n title="2012-10-19T20:03:05Z"  2012-10-19 20:03:05 UTC
+              li
+                a href="/categories/Test_Unit_Extensions"  Test::Unit Extensions
+                abbr.timeago.tipsy-n title="2012-03-01T15:44:48Z"  2012-03-01 15:44:48 UTC
+              li
+                a href="/categories/Acceptance_Test_Frameworks"  Acceptance Test Frameworks
+                abbr.timeago.tipsy-n title="2012-03-01T15:42:38Z"  2012-03-01 15:42:38 UTC
+              li
+                a href="/categories/Recommendation_Engines"  Recommendation Engines
+                abbr.timeago.tipsy-n title="2012-02-21T12:03:47Z"  2012-02-21 12:03:47 UTC
+              li
+                a href="/categories/User_Messaging_Systems"  User Messaging Systems
+                abbr.timeago.tipsy-n title="2012-02-21T11:36:25Z"  2012-02-21 11:36:25 UTC
+              li
+                a href="/categories/Reputation_Engines"  Reputation Engines
+                abbr.timeago.tipsy-n title="2012-02-21T11:10:54Z"  2012-02-21 11:10:54 UTC
+              li
+                a href="/categories/Amazon_DynamoDB"  Amazon DynamoDB
+                abbr.timeago.tipsy-n title="2012-02-20T15:21:56Z"  2012-02-20 15:21:56 UTC
+    #footer
+      .container
+        .span-4.footer
+          strong Navigation
+          ul
+            li
+              a href="/"  Home
+            li
+              a href="/categories"  Categories
+            li
+              a href="/projects"  Projects
+            li
+              a href="http://help.ruby-toolbox.com"  Help &amp; Discussion
+        .span-7.footer
+          strong Suggestions, Help & Contact
+          .footer-block
+            div
+              | For up-to date information regarding the Toolbox, subscribe
+              | to the
+              strong
+                a href="/blog.rss"  RSS feed
+              | and follow
+              strong
+                a href="https://twitter.com/rubytoolbox"  @rubytoolbox
+            div
+              | You can also check out the
+              strong
+                a href="http://help.ruby-toolbox.com"  support site
+              | for discussing features and problems.
+        .span-2.footer
+        .span-9.footer
+          strong Who?
+          .footer-block
+            div
+              | The Ruby Toolbox is brought to you from Hamburg since 2009 by Christoph Olszowka.
+            div
+              | If you want to personally say hi or complain, you can do so via mail to me at
+              strong christoph (at) ruby-toolbox (dot) com
+            div
+              | You can also find me on Twitter as
+              strong
+                a href="https://twitter.com/thedeadserious"  @thedeadserious
+              | and on
+              strong
+                a href="https://github.com/colszowka"  Github
+        .span-2.footer
+        .span-5.footer
+          strong Stats
+          .footer-block
+            | Currently
+            | 2021
+            | projects in
+            | 168
+            | categories and a total of
+            | 96318
+            | gems and
+            | 56326
+            | github repositories

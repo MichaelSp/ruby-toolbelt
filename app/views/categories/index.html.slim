@@ -1,0 +1,16 @@
+.grouped.cb.by_group
+  h3
+    a name="categories"
+    | Categories by group
+    span.small
+      a href="/categories/by_name"  (Show by name)
+  - @categories.each do |category|
+    a name=category.name
+    h4= category.name
+    ul.group_items
+      - category.categories.each do |sub_category|
+        li
+          =link_to category_path(sub_category), class: 'link'
+            = sub_category.name
+            span.description
+              | #{sub_category.projects.limit(5).map(&:name).join ', '} #{"and #{sub_category.projects.count - 5} more" if sub_category.projects.count > 5 }

@@ -1,0 +1,78 @@
+= form_for @project do |f|
+  - if @project.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+      ul
+        - @project.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :popularity
+    = f.text_field :popularity
+  .field
+    = f.label :website
+    = f.text_field :website
+  .field
+    = f.label :rdoc
+    = f.text_field :rdoc
+  .field
+    = f.label :wiki
+    = f.text_field :wiki
+  .field
+    = f.label :source_code
+    = f.text_field :source_code
+  .field
+    = f.label :bug_tracker
+    = f.text_field :bug_tracker
+  .field
+    = f.label :mailing_list
+    = f.text_field :mailing_list
+  .field
+    = f.label :downloads
+    = f.number_field :downloads
+  .field
+    = f.label :releases
+    = f.number_field :releases
+  .field
+    = f.label :latest_version
+    = f.text_field :latest_version
+  .field
+    = f.label :released_at
+    = f.datetime_select :released_at
+  .field
+    = f.label :first_released_at
+    = f.datetime_select :first_released_at
+  .field
+    = f.label :depending_gems
+    = f.number_field :depending_gems
+  .field
+    = f.label :github
+    = f.text_field :github
+  .field
+    = f.label :watchers
+    = f.number_field :watchers
+  .field
+    = f.label :forks
+    = f.number_field :forks
+  .field
+    = f.label :activity
+    = f.text_field :activity
+  .field
+    = f.label :last_commit_at
+    = f.datetime_select :last_commit_at
+  .field
+    = f.label :first_commit_at
+    = f.datetime_select :first_commit_at
+  .field
+    = f.label :contributors
+    = f.text_field :contributors
+  .field
+    = f.label :issues
+    = f.number_field :issues
+  .actions = f.submit
