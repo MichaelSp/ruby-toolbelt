@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'iconic_stroke';
+    src: url('./iconic_stroke.eot');
+    src: local('☺'),
+    url('./iconic_stroke.eot?iefix') format('eot'),
+    url('./iconic_stroke.ttf') format('truetype'),
+    url('./iconic_stroke.svg#webfont') format('svg'),
+    local('☺');
+    font-weight: normal;
+    font-style: normal;
+}
