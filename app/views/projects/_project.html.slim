@@ -3,11 +3,11 @@
     .box-header
       ul.buttons
         li.like
-          a#like_42.icon.icon-heart.project_button.tipsy-s.ar.like_button href="/projects/cucumber/like" title="Like this project"
+          a#like_42.icon.icon-heart.project_button.tipsy-s.ar.like_button href="#{like_project_path project}" title="Like this project"
         li.comments
-          a.icon.icon-chat-alt.project_button.tipsy-s href="/projects/cucumber#comments" title="1 comments on Cucumber"  1
+          a.icon.icon-chat-alt.project_button.tipsy-s href="#{project_path project}#comments" title="0 comment on #{project.name}" 0
         li.score
-          a.icon-score.score.project_button.tipsy-s href="/projects/cucumber/popularity" title="Ruby Toolbox popularity rating"  11.75
+          a.icon-score.score.project_button.tipsy-s href="/projects/cucumber/popularity" title="Ruby Toolbox popularity rating" = project.popularity.round(2)
         li.category
           = link_to project.categories.first do
             = fa_icon 'folder-open-o'

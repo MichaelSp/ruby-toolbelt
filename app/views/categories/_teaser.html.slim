@@ -4,7 +4,7 @@
       .teaser-bar
         ul
           li
-            a.score.icon-score.tipsy-s href="#" original-title=("Average score of all projects") = @category.projects.average(:popularity)
+            a.score.icon-score.tipsy-s href="#" original-title=("Average score of all projects") = @category.projects.average(:popularity).round(2)
           li
             a.tipsy-s.icon.icon-folder-close href="/##{@category.name.underscore}" original-title=("See similar categories in group #{@category.name}") =@category.name
       h2 =@category.name
