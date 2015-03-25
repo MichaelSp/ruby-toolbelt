@@ -5,7 +5,7 @@
     span.small
       a href="/categories/by_name"  (Show by name)
   - @categories.each do |category|
-    a name=category.name
+    a name=category.name.underscore
     h4= category.name
     ul.group_items
       - category.categories.each do |sub_category|

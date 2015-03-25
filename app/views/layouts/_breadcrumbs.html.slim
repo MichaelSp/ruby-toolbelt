@@ -4,7 +4,6 @@
       ul
         li
           a href="/"  Home
-        li
-          a href="/#Testing"  Testing
-        li.active
-          a href="/categories/Acceptance_Test_Frameworks"  Acceptance Test Frameworks
+        - (@category.try(:self_and_ancestors) || []).each do |category|
+          li
+            a href="/##{category.name.underscore}" =category.name
