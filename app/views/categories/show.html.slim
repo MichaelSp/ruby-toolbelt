@@ -5,5 +5,5 @@
   .container
     #content.span-20
       .category
-        - @category.projects.each do |project|
+        - @category.projects.order(popularity: :desc).each do |project|
           = render project
