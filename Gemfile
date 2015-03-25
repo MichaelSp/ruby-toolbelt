@@ -43,4 +43,6 @@ source 'https://rubygems.org' do
   gem 'font-awesome-rails'
   gem 'mechanize'
   gem 'sidekiq'
+  gem 'local_time'
+  gem 'chartkick'
 end
