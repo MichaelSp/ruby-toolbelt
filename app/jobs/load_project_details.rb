@@ -5,8 +5,12 @@ class LoadProjectDetails < ActiveJob::Base
 
   def perform project
     @project = project
+    return if @project.error_message.present?
     load_rubygems
     load_github if @project.github.present?
+    @project.save
+  rescue => e
+    @project.error_message = e.message + "\n" + e.backtrace.join("\n")
     @project.save
   end
 
