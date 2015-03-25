@@ -1,9 +1,10 @@
-#breadcrumbs
-  .container
-    .span-29.last
-      ul
-        li
-          a href="/"  Home
-        - (@category.try(:self_and_ancestors) || []).each do |category|
+- if @category
+  #breadcrumbs
+    .container
+      .span-29.last
+        ul
           li
-            a href="/##{category.name.underscore}" =category.name
+            a href="/"  Home
+          - @category.self_and_ancestors.each do |category|
+            li
+              a href="/##{category.name.underscore}" =category.name

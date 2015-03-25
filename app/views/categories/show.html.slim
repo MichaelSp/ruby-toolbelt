@@ -1,13 +1,50 @@
-#teaser
-  .container
-    .span-29.last
-      .teaser-bar
-        ul
-          li
-            a.score.icon-score.tipsy-s href="#" title=("Average score of all projects")  1.21
-          li
-            a.tipsy-s.icon.icon-folder-close href="/#Testing" title=("See similar categories in group Testing")  Testing
-      h2 Acceptance Test Frameworks
+- content_for :teaser do
+  #teaser
+    .container
+      .span-29.last
+        .teaser-bar
+          ul
+            li
+              a.score.icon-score.tipsy-s href="#" original-title=("Average score of all projects") = @category.projects.average(:popularity)
+            li
+              a.tipsy-s.icon.icon-folder-close href="/##{@category.name.underscore}" original-title=("See similar categories in group #{@category.name}") =@category.name
+        h2 Active Record DB Adapters
+        #teaser-graph.graph style=("position: relative;")
+          svg height="80" version="1.1" width="1150" xmlns="http://www.w3.org/2000/svg"
+            defs
+            rect fill="#a61414" height="80" r="0" rx="0" ry="0" stroke="#a61414" width="115" x="14.374999999999996" y="0"
+            rect fill="#e31b1b" height="77.97172111165285" r="0" rx="0" ry="0" stroke="#e31b1b" width="115" x="158.125" y="2.0282788883471454"
+            rect fill="#a61414" height="61.78449536811311" r="0" rx="0" ry="0" stroke="#a61414" width="115" x="301.875" y="18.215504631886887"
+            rect fill="#e31b1b" height="58.196001950268155" r="0" rx="0" ry="0" stroke="#e31b1b" width="115" x="445.625" y="21.803998049731845"
+            rect fill="#a61414" height="48.32764505119454" r="0" rx="0" ry="0" stroke="#a61414" width="115" x="589.375" y="31.672354948805463"
+            rect fill="#e31b1b" height="44.31009263773768" r="0" rx="0" ry="0" stroke="#e31b1b" width="115" x="733.125" y="35.68990736226232"
+            rect fill="#a61414" height="15.134080936128717" r="0" rx="0" ry="0" stroke="#a61414" width="115" x="876.875" y="64.86591906387129"
+            rect fill="#e31b1b" height="0.39005363237445145" r="0" rx="0" ry="0" stroke="#e31b1b" width="115" x="1020.625" y="79.60994636762555"
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 0px; bottom: 80px; width: 143.75px;")  2.051
+          .label.axis-label style=("position: absolute; left: 0px; top: 80px; width: 143.75px;")
+            a href="#activerecord-jdbc-adapter"  Activerecord-jdbc-adapter
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 143.75px; bottom: 77.9717px; width: 143.75px;")  1.999
+          .label.axis-label style=("position: absolute; left: 143.75px; top: 80px; width: 143.75px;")
+            a href="#activerecord-sqlserver-adapter"  Activerecord-sqlserver-adapter
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 287.5px; bottom: 61.7845px; width: 143.75px;")  1.584
+          .label.axis-label style=("position: absolute; left: 287.5px; top: 80px; width: 143.75px;")
+            a href="#activerecord-jdbcmysql-adapter"  Activerecord-jdbcmysql-adapter
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 431.25px; bottom: 58.196px; width: 143.75px;")  1.492
+          .label.axis-label style=("position: absolute; left: 431.25px; top: 80px; width: 143.75px;")
+            a href="#activerecord-jdbcpostgresql-adapter"  Activerecord-jdbcpostgresql-adapter
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 575px; bottom: 48.3276px; width: 143.75px;")  1.239
+          .label.axis-label style=("position: absolute; left: 575px; top: 80px; width: 143.75px;")
+            a href="#activerecord-jdbcderby-adapter"  Activerecord-jdbcderby-adapter
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 718.75px; bottom: 44.3101px; width: 143.75px;")  1.136
+          .label.axis-label style=("position: absolute; left: 718.75px; top: 80px; width: 143.75px;")
+            a href="#activerecord-oracle_enhanced-adapter"  Oracle-enhanced
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 862.5px; bottom: 15.1341px; width: 143.75px;")  0.388
+          .label.axis-label style=("position: absolute; left: 862.5px; top: 80px; width: 143.75px;")
+            a href="#activerecord-nulldb-adapter"  Nulldb
+          .label.bar-label.icon.icon-beaker style=("position: absolute; left: 1006.25px; bottom: 0.390054px; width: 143.75px;")  0.01
+          .label.axis-label style=("position: absolute; left: 1006.25px; top: 80px; width: 143.75px;")
+            a href="#oracle-enhanced-enhanced"  Oracle-enhanced-enhanced
+
 #main
   .container
     #content.span-20
