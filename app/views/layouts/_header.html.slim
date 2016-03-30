@@ -8,12 +8,11 @@
         ul
           li
             a href="/"  Home
-          li.user-controls.signed_in
-            a href="/account"
-              | Signed in as
-              strong MichaelSp
           li
-            a href="/sign_out"  Sign out
+            strong.icon.icon-github
+              a.ar href="/auth/github" Sign in
+            '
+            | using your Github account
       #nav
         ul
           li.active

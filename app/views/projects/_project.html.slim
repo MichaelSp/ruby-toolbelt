@@ -7,7 +7,7 @@
         li.comments
           a.icon.icon-chat-alt.project_button.tipsy-s href="#{project_path project}#comments" title="0 comment on #{project.name}" 0
         li.score
-          a.icon-score.score.project_button.tipsy-s href="/projects/cucumber/popularity" title="Ruby Toolbox popularity rating" = project.popularity.round(2)
+          a.icon-score.score.project_button.tipsy-s href="/projects/cucumber/popularity" title="Ruby Toolbox popularity rating" = project.popularity.try :round, 2
         li.category
           = link_to project.categories.first do
             = fa_icon 'folder-open-o'
@@ -17,48 +17,36 @@
       .description =project.description
     .attribute-section
       .attr-inner
-        .attribute
-          .value
-            a.tipsy-n.box-links.website href="http://cukes.info" title="Website is at http://cukes.info"  Website
-        .attribute
-          .value
-            a.tipsy-n.box-links.rdoc href="http://cukes.info" title="RDoc is at http://cukes.info"  RDoc
-        .attribute
-          .value
-            a.tipsy-n.box-links.wiki href="http://wiki.github.com/cucumber/cucumber" title="Wiki is at http://wiki.github.com/cucumber/cucumber"  Wiki
-        .attribute
-          .value
-            a.tipsy-n.box-links.source_code href="https://github.com/cucumber/cucumber" title="Source Code is at https://github.com/cucumber/cucumber"  Source Code
-        .attribute
-          .value
-            a.tipsy-n.box-links.bug_tracker href="https://github.com/cucumber/cucumber/issues" title="Bug Tracker is at https://github.com/cucumber/cucumber/issues"  Bug Tracker
-        .attribute
-          .value
-            a.tipsy-n.box-links.mailing_list href="http://groups.google.com/group/cukes" title="Mailing List is at http://groups.google.com/group/cukes"  Mailing List
+        - ["Website", "Rdoc", "Wiki", "Source Code", "Bug Tracker", "Mailing List"].each do |link_name|
+          - link = project.send(link_name.sub(" ", "").underscore.to_sym)
+          - next if link.blank?
+          .attribute
+            .value
+              = link_to link_name, link, title: "#{link_name} is at #{link}", class: "tipsy-n box-links #{link_name.underscore}"
     .attribute-section.rubygem
       .attr-inner
         h4
           | Rubygem
-          a.tipsy-w href="https://rubygems.org/gems/cucumber" title="Install with: gem install cucumber"  cucumber
+          a.tipsy-w href="https://rubygems.org/gems/#{project.name}" title="Install with: gem install #{project.name}"  =project.name
         .attribute-row
           .attribute.attr-columns-1.total_downloads
             h5 Total Downloads
             .value
-              .icon.icon-similar.tipsy-n title="Increased by ~5% in the last month"  7500685
+              .icon.icon-similar.tipsy-n title="Increased by ~5% in the last month"  =project.downloads
           .attribute.attr-columns-1.releases
             h5 Releases
-            .value 143
+            .value = project.releases
           .attribute.attr-columns-1.current_version
             h5 Current Version
-            .value 2.0.0.rc.5
+            .value = project.latest_version
           .attribute.attr-columns-1.released
             h5 Released
             .value
-              abbr.timeago.tipsy-n title="2015-03-19T00:00:00Z"  2015-03-19 00:00:00 UTC
+              abbr.timeago.tipsy-n title="#{project.released_at}"  = project.released_at
           .attribute.attr-columns-1.first_release
             h5 First Release
             .value
-              abbr.timeago.tipsy-n title="2008-09-30T22:00:00Z"  2008-09-30 22:00:00 UTC
+              abbr.timeago.tipsy-n title="#{project.first_released_at}"  =project.first_released_at
         .attribute-more
           .attribute-row
             .attribute.attr-columns-2.depends_on_following_gems
@@ -89,9 +77,9 @@
                 a.tipsy-s href="/projects/yard" title="YARD is a documentation generation tool for the Ruby programming language. It enables the user to generate consistent), usable documentation that can be exported to a number of formats very easily, and also supports extending for custom Ruby constructs such as custom class level definitions. (listed in Documentation Generators)"  yard
             .attribute.attr-columns-1.depending_gems
               h5 Depending Gems
-              .value 1640
+              .value = project.depending_gems
             .attribute.attr-columns-2.popular_gems_depending_on_cucumber
-              h5 Popular gems depending on cucumber
+              h5 Popular gems depending on #{project.name}
               .value
                 a.tipsy-s href="/projects/rspec-mocks" title="RSpec's 'test double' framework), with support for stubbing and mocking (listed in Mocking)" > rspec-mocks
                 | ,
@@ -101,49 +89,50 @@
                 | ,
                 a.tipsy-s href="/projects/rspec-rails" title="RSpec for Rails"  rspec-rails
                 | ,
-    .attribute-section.github_repo
-      .attr-inner
-        h4
-          | Github
-          a.tipsy-w href="https://github.com/cucumber/cucumber" title="git clone https://github.com/cucumber/cucumber"  cucumber/cucumber
-        .attribute-row
-          .attribute.attr-columns-1.watchers
-            h5 Watchers
-            .value 4547
-          .attribute.attr-columns-1.forks
-            h5 Forks
-            .value 960
-          .attribute.attr-columns-1.development_activity
-            h5 Development activity
-            .value
-              .icon.icon-similar.tipsy-n title="Average date of recent 20 commits is within last year"  Less active
-          .attribute.attr-columns-1.last_commit
-            h5 Last commit
-            .value
-              abbr.timeago.tipsy-n title="2014-12-19T14:47:41Z"  2014-12-19 14:47:41 UTC
-          .attribute.attr-columns-1.first_commit
-            h5 First commit
-            .value
-              a href="https://github.com/cucumber/cucumber/tree/f3292f4023a707099d02602b2bd6c4ca3cec6820"
-                abbr.timeago.tipsy-n title="2008-04-08T21:40:41Z"  2008-04-08 21:40:41 UTC
-        .attribute-more
+    -if project.github.present?
+      .attribute-section.github_repo
+        .attr-inner
+          h4
+            | Github
+            a.tipsy-w href="#{project.github}" title="git clone #{project.github}"  =project.github.gsub /https?:\/\/github.com\//, ''
           .attribute-row
-            .attribute.attr-columns-2.top_contributors
-              h5 Top contributors
+            .attribute.attr-columns-1.watchers
+              h5 Watchers
+              .value =project.watchers
+            .attribute.attr-columns-1.forks
+              h5 Forks
+              .value project.forms
+            .attribute.attr-columns-1.development_activity
+              h5 Development activity
               .value
-                a href="https://github.com/aslakhellesoy" > aslakhellesoy
-                | ,
-                a href="https://github.com/mattwynne"  mattwynne
-                | ,
-                a href="https://github.com/os97673"  os97673
-            .attribute.attr-columns-1.contributors
-              h5 Contributors
-              .value 30
-            .attribute.attr-columns-1.issues
-              h5 Issues
+                .icon.icon-similar.tipsy-n title="Average date of recent 20 commits is within last year"  Less active
+            .attribute.attr-columns-1.last_commit
+              h5 Last commit
               .value
-                a href="https://github.com/cucumber/cucumber/issues" target="_blank"  72
-            .attribute.attr-columns-1.wiki_pages
-              h5 Wiki pages
+                abbr.timeago.tipsy-n title="2014-12-19T14:47:41Z" = project.last_commit_at
+            .attribute.attr-columns-1.first_commit
+              h5 First commit
               .value
-                a href="https://github.com/cucumber/cucumber/wiki" target="_blank"  https://github.com/cucumber/cucumber/wiki
+                a href="https://github.com/cucumber/cucumber/tree/f3292f4023a707099d02602b2bd6c4ca3cec6820"
+                  abbr.timeago.tipsy-n title="2008-04-08T21:40:41Z" =project.first_commit_at
+          .attribute-more
+            .attribute-row
+              .attribute.attr-columns-2.top_contributors
+                h5 Top contributors
+                .value
+                  a href="https://github.com/aslakhellesoy" > aslakhellesoy
+                  | ,
+                  a href="https://github.com/mattwynne"  mattwynne
+                  | ,
+                  a href="https://github.com/os97673"  os97673
+              .attribute.attr-columns-1.contributors
+                h5 Contributors
+                .value 30
+              .attribute.attr-columns-1.issues
+                h5 Issues
+                .value
+                  a href="#{project.bug_tracker}" target="_blank"  = project.issues
+              .attribute.attr-columns-1.wiki_pages
+                h5 Wiki pages
+                .value
+                  a href="#{project.wiki}" target="_blank"  = project.wiki

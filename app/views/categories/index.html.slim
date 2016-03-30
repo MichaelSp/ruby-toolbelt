@@ -12,5 +12,6 @@
         li
           =link_to category_path(sub_category), class: 'link'
             = sub_category.name
+            '
             span.description
               | #{sub_category.projects.order(popularity: :desc).limit(5).map(&:name).join ', '} #{"and #{sub_category.projects.count - 5} more" if sub_category.projects.count > 5 }

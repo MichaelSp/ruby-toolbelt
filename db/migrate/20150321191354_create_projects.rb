@@ -24,6 +24,7 @@ class CreateProjects < ActiveRecord::Migration
       t.datetime :first_commit_at
       t.string :contributors
       t.integer :issues
+      t.text :error_message
 
       t.timestamps null: false
     end

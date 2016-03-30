@@ -19,14 +19,12 @@ html lang="en-us"
           = yield
         #sidebar.span-9.last
           .sidebar.user
-            div
-            .small Signed in as
-            h3 MichaelSp
             ul
               li
-                a href="/account"  Show your account
-              li
-                a href="/sign_out"  Sign out
+                strong.icon.icon-github
+                  a.ar href="/auth/github" Sign in
+                '
+                | using your Github account
           .clear
           .note Sponsored by you!
           .sidebar.recent
