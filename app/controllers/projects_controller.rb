@@ -62,13 +62,21 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = case params[:id]
+                 when Numeric then
+                   Project.find(params[:id])
+                 when String then
+                   Project.where(name: params[:id])
+                 else
+                   nil
+               end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:name, :description, :popularity, :website, :rdoc, :wiki, :source_code, :bug_tracker, :mailing_list, :downloads, :releases, :latest_version, :released_at, :first_released_at, :depending_gems, :github, :watchers, :forks, :activity, :last_commit_at, :first_commit_at, :contributors, :issues)
-    end
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_params
+    params.require(:project).permit(:name, :description, :popularity, :website, :rdoc, :wiki, :source_code, :bug_tracker, :mailing_list, :downloads, :releases, :latest_version, :released_at, :first_released_at, :depending_gems, :github, :watchers, :forks, :activity, :last_commit_at, :first_commit_at, :contributors, :issues)
+  end
 end

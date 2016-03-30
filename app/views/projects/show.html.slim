@@ -1,26 +1,25 @@
 
 #breadcrumbs
-.container
-  .span-29.last
-    ul
-      li
-        a href="/"  Home
-      li
-        a href="/#Testing"  Testing
-      li.active
-        a href="/categories/A_B_Testing"  A/B Testing
-#teaser
-.container
-  .span-29.last
-    .teaser-bar
+  .container
+    .span-29.last
       ul
         li
-          a.score.icon-score.tipsy-s href="#" title=("Average score of all projects")  0.41
+          a href="/"  Home
         li
-          a.tipsy-s.icon.icon-folder-close href="/#Testing" title=("See similar categories in group Testing")  Testing
-    h2 A/B Testing
-#main
-.container
+          a href="/#Testing"  Testing
+        li.active
+          a href="/categories/A_B_Testing"  A/B Testing
+#teaser
+  .container
+    .span-29.last
+      .teaser-bar
+        ul
+          li
+            a.score.icon-score.tipsy-s href="#" title=("Average score of all projects")  0.41
+          li
+            a.tipsy-s.icon.icon-folder-close href="/#Testing" title=("See similar categories in group Testing")  Testing
+      h2 A/B Testing
+#main.container
   #content.span-20
     .category
       #split.box.clear.project
@@ -87,43 +86,33 @@
                   .attribute.attr-columns-2.depends_on_following_gems
                     h5 Depends on following gems
                     .value
-                      a.tipsy-s href="/projects/bundler" title=("Bundler manages an application's dependencies through its entire life), across many machines, systematically and repeatably (listed in Dependency Management)" > bundler
+                      a.tipsy-s href="/projects/bundler" title="Bundler manages an application's dependencies through its entire life, across many machines, systematically and repeatably (listed in Dependency Management)" > bundler
                       | ,
-                      = succeed "," do
-                        a.tipsy-s href="/projects/coveralls" title=("A Ruby implementation of the Coveralls API. (listed in Code Metrics)")  coveralls
-                      = succeed "," do
-                        a.tipsy-s href="/projects/rack-test" title=("Rack::Test is a small), simple testing API for Rack apps. It can be used on its own or as a reusable starting point for Web frameworks and testing libraries to build on. Most of its initial functionality is an extraction of Merb 1.0's request helpers feature."  rack-test
-                      = succeed "," do
-                        a.tipsy-s href="/projects/rake" title=("Rake is a Make-like program implemented in Ruby. Tasks and dependencies are specified in standard Ruby syntax. Rake has the following features: * Rakefiles (rake's version of Makefiles) are completely defined in standard Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about (is that a tab or a space?) * Users can specify tasks with prerequisites. * Rake supports rule patterns to synthesize implicit tasks. * Flexible FileLists that act like arrays but know about manipulating file names and paths. * A library of prepackaged tasks to make building rakefiles easier. For example), tasks for building tarballs and publishing to FTP or SSH sites. (Formerly tasks for building RDoc and Gems were included in rake but they're now available in RDoc and RubyGems respectively.) * Supports parallel execution of tasks. (listed in Scripting Frameworks)"  rake
-                      = succeed "," do
-                        a.tipsy-s href="/projects/redis" title=("A Ruby client that tries to match Redis' API one-to-one), while still providing an idiomatic interface. It features thread-safety, client-side sharding, pipelining, and an obsession for performance. (listed in Redis Clients)"  redis
-                      = succeed "," do
-                        a.tipsy-s href="/projects/redis-namespace" title=("Adds a Redis::Namespace class which can be used to namespace calls to Redis. This is useful when using a single instance of Redis with multiple), different applications."  redis-namespace
-                      = succeed "," do
-                        a.tipsy-s href="/projects/rspec" title=("BDD for Ruby (listed in Unit Test Frameworks)")  rspec
-                      = succeed "," do
-                        a.tipsy-s href="/projects/simple-random" title=("Simple Random Number Generator including Beta), Cauchy, Chi square, Exponential, Gamma, Inverse Gamma, Laplace (double exponential), Normal, Student t, Uniform, and Weibull. Ported from John D. Cook's C# Code."  simple-random
-                      a.tipsy-s href="/projects/sinatra" title=("Sinatra is a DSL for quickly creating web applications in Ruby with minimal effort. (listed in Web App Frameworks)")  sinatra
+                      a.tipsy-s href="/projects/coveralls" title="A Ruby implementation of the Coveralls API. (listed in Code Metrics)")  coveralls
+                      a.tipsy-s href="/projects/rack-test" title="Rack::Test is a small), simple testing API for Rack apps. It can be used on its own or as a reusable starting point for Web frameworks and testing libraries to build on. Most of its initial functionality is an extraction of Merb 1.0's request helpers feature."  rack-test
+                      a.tipsy-s href="/projects/rake" title="Rake is a Make-like program implemented in Ruby. Tasks and dependencies are specified in standard Ruby syntax. Rake has the following features: * Rakefiles (rake's version of Makefiles) are completely defined in standard Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about (is that a tab or a space?) * Users can specify tasks with prerequisites. * Rake supports rule patterns to synthesize implicit tasks. * Flexible FileLists that act like arrays but know about manipulating file names and paths. * A library of prepackaged tasks to make building rakefiles easier. For example), tasks for building tarballs and publishing to FTP or SSH sites. (Formerly tasks for building RDoc and Gems were included in rake but they're now available in RDoc and RubyGems respectively.) * Supports parallel execution of tasks. (listed in Scripting Frameworks)"  rake
+                      a.tipsy-s href="/projects/redis" title="A Ruby client that tries to match Redis' API one-to-one), while still providing an idiomatic interface. It features thread-safety, client-side sharding, pipelining, and an obsession for performance. (listed in Redis Clients)"  redis
+                      a.tipsy-s href="/projects/redis-namespace" title="Adds a Redis::Namespace class which can be used to namespace calls to Redis. This is useful when using a single instance of Redis with multiple), different applications."  redis-namespace
+                      a.tipsy-s href="/projects/rspec" title="BDD for Ruby (listed in Unit Test Frameworks)")  rspec
+                      a.tipsy-s href="/projects/simple-random" title="Simple Random Number Generator including Beta), Cauchy, Chi square, Exponential, Gamma, Inverse Gamma, Laplace (double exponential), Normal, Student t, Uniform, and Weibull. Ported from John D. Cook's C# Code."  simple-random
+                      a.tipsy-s href="/projects/sinatra" title="Sinatra is a DSL for quickly creating web applications in Ruby with minimal effort. (listed in Web App Frameworks)"  sinatra
                   .attribute.attr-columns-1.depending_gems
                     h5 Depending Gems
                     .value 5
                   .attribute.attr-columns-2.popular_gems_depending_on_split
                     h5 Popular gems depending on split
                     .value
-                      a.tipsy-s href="/projects/split-analytics" title=("Split extension to push test data to google analytics") > split-analytics
+                      a.tipsy-s href="/projects/split-analytics" title="Split extension to push test data to google analytics" > split-analytics
                       | ,
-                      = succeed "," do
-                        a.tipsy-s href="/projects/split-export" title=("Split extension to export your data")  split-export
-                      = succeed "," do
-                        a.tipsy-s href="/projects/split_cacheable" title=("An extension to Split to allow for automatic cache bucket creation accross Split tests.")  split_cacheable
-                      = succeed "," do
-                        a.tipsy-s href="/projects/split-counters" title=("This gem adds counters to Split")  split-counters
-                      a.tipsy-s href="/projects/split-mongoid" title=("A Mongoid Persistence Layer for Split")  split-mongoid
+                      a.tipsy-s href="/projects/split-export" title="Split extension to export your data"  split-export
+                      a.tipsy-s href="/projects/split_cacheable" title="An extension to Split to allow for automatic cache bucket creation accross Split tests."  split_cacheable
+                      a.tipsy-s href="/projects/split-counters" title="This gem adds counters to Split"  split-counters
+                      a.tipsy-s href="/projects/split-mongoid" title="A Mongoid Persistence Layer for Split"  split-mongoid
           .attribute-section.github_repo
             .attr-inner
               h4
                 | Github
-                a.tipsy-w href="https://github.com/andrew/split" title=("git clone https://github.com/andrew/split")  andrew/split
+                a.tipsy-w href="https://github.com/andrew/split" title="git clone https://github.com/andrew/split"  andrew/split
               .attribute-row
                 .attribute.attr-columns-1.watchers
                   h5 Watchers
@@ -150,23 +139,14 @@
                     h5 Top contributors
                     .value
                       a href="https://github.com/andrew" > andrew
-                      | ,
-                      = succeed "," do
-                        a href="https://github.com/iangreenleaf"  iangreenleaf
-                      = succeed "," do
-                        a href="https://github.com/buddhamagnet"  buddhamagnet
-                      = succeed "," do
-                        a href="https://github.com/woodhull"  woodhull
-                      = succeed "," do
-                        a href="https://github.com/phoet"  phoet
-                      = succeed "," do
-                        a href="https://github.com/joshdover"  joshdover
-                      = succeed "," do
-                        a href="https://github.com/semanticart"  semanticart
-                      = succeed "," do
-                        a href="https://github.com/qpowell"  qpowell
-                      = succeed "," do
-                        a href="https://github.com/lautis"  lautis
+                      a href="https://github.com/iangreenleaf"  iangreenleaf
+                      a href="https://github.com/buddhamagnet"  buddhamagnet
+                      a href="https://github.com/woodhull"  woodhull
+                      a href="https://github.com/phoet"  phoet
+                      a href="https://github.com/joshdover"  joshdover
+                      a href="https://github.com/semanticart"  semanticart
+                      a href="https://github.com/qpowell"  qpowell
+                      a href="https://github.com/lautis"  lautis
                       | and
                       a href="https://github.com/coolzilj"  coolzilj
                   .attribute.attr-columns-1.contributors
@@ -242,21 +222,14 @@
                   .attribute.attr-columns-2.depends_on_following_gems
                     h5 Depends on following gems
                     .value
-                      a.tipsy-s href="/projects/fakeweb" title=("FakeWeb is a helper for faking web requests in Ruby. It works at a global level), without modifying code or writing extensive stubs. (listed in Mocking Web Requests)" > fakeweb
-                      | ,
-                      = succeed "," do
-                        a.tipsy-s href="/projects/guard-rspec" title=("Guard::RSpec automatically run your specs (much like autotest). (listed in Continuous Testing)")  guard-rspec
-                      = succeed "," do
-                        a.tipsy-s href="/projects/persistent_http" title=("Persistent HTTP connections using a connection pool")  persistent_http
-                      = succeed "," do
-                        a.tipsy-s href="/projects/rake" title=("Rake is a Make-like program implemented in Ruby. Tasks and dependencies are specified in standard Ruby syntax. Rake has the following features: * Rakefiles (rake's version of Makefiles) are completely defined in standard Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about (is that a tab or a space?) * Users can specify tasks with prerequisites. * Rake supports rule patterns to synthesize implicit tasks. * Flexible FileLists that act like arrays but know about manipulating file names and paths. * A library of prepackaged tasks to make building rakefiles easier. For example), tasks for building tarballs and publishing to FTP or SSH sites. (Formerly tasks for building RDoc and Gems were included in rake but they're now available in RDoc and RubyGems respectively.) * Supports parallel execution of tasks. (listed in Scripting Frameworks)"  rake
-                      = succeed "," do
-                        a.tipsy-s href="/projects/rb-inotify" title=("A Ruby wrapper for Linux's inotify), using FFI"  rb-inotify
-                      = succeed "," do
-                        a.tipsy-s href="/projects/rspec" title=("BDD for Ruby (listed in Unit Test Frameworks)")  rspec
-                      = succeed "," do
-                        a.tipsy-s href="/projects/uuid" title=("UUID generator for producing universally unique identifiers based on RFC 4122 (http://www.ietf.org/rfc/rfc4122.txt).")  uuid
-                      a.tipsy-s href="/projects/vcr" title=("VCR provides a simple API to record and replay your test suite's HTTP interactions. It works with a variety of HTTP client libraries), HTTP stubbing libraries and testing frameworks. (listed in Mocking Web Requests)"  vcr
+                      a.tipsy-s href="/projects/fakeweb" title="FakeWeb is a helper for faking web requests in Ruby. It works at a global level), without modifying code or writing extensive stubs. (listed in Mocking Web Requests)" > fakeweb
+                      a.tipsy-s href="/projects/guard-rspec" title="Guard::RSpec automatically run your specs (much like autotest). (listed in Continuous Testing)"  guard-rspec
+                      a.tipsy-s href="/projects/persistent_http" title="Persistent HTTP connections using a connection pool"  persistent_http
+                      a.tipsy-s href="/projects/rake" title="Rake is a Make-like program implemented in Ruby. Tasks and dependencies are specified in standard Ruby syntax. Rake has the following features: * Rakefiles (rake's version of Makefiles) are completely defined in standard Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about (is that a tab or a space?) * Users can specify tasks with prerequisites. * Rake supports rule patterns to synthesize implicit tasks. * Flexible FileLists that act like arrays but know about manipulating file names and paths. * A library of prepackaged tasks to make building rakefiles easier. For example), tasks for building tarballs and publishing to FTP or SSH sites. (Formerly tasks for building RDoc and Gems were included in rake but they're now available in RDoc and RubyGems respectively.) * Supports parallel execution of tasks. (listed in Scripting Frameworks)"  rake
+                      a.tipsy-s href="/projects/rb-inotify" title="A Ruby wrapper for Linux's inotify), using FFI"  rb-inotify
+                      a.tipsy-s href="/projects/rspec" title="BDD for Ruby (listed in Unit Test Frameworks)"  rspec
+                      a.tipsy-s href="/projects/uuid" title="UUID generator for producing universally unique identifiers based on RFC 4122 (http://www.ietf.org/rfc/rfc4122.txt)."  uuid
+                      a.tipsy-s href="/projects/vcr" title="VCR provides a simple API to record and replay your test suite's HTTP interactions. It works with a variety of HTTP client libraries), HTTP stubbing libraries and testing frameworks. (listed in Mocking Web Requests)"  vcr
                   .attribute.attr-columns-1.depending_gems
                     h5 Depending Gems
                     .value 1

@@ -1,6 +1,6 @@
 source 'https://rubygems.org' do
 
-  gem 'rails', '4.2.1'
+  gem 'rails', '4.2.6'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Use SCSS for stylesheets
@@ -22,11 +22,9 @@ source 'https://rubygems.org' do
   # gem 'capistrano-rails', group: :development
 
   group :development, :test do
-    # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-    gem 'byebug'
+    gem 'better_errors'
+    gem 'binding_of_caller'
 
-    # Access an IRB console on exception pages or by using <%= console %> in views
-    gem 'web-console', '~> 2.0'
     gem 'quiet_assets'
     gem 'seed_dump'
   end
